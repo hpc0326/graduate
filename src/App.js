@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
+import React ,{useState , useEffect} from 'react';
+//import { Button } from 'react-bootstrap';
+import Table from './Table'
 
-function App() {
+
+
+
+const App = () => {
+
+  const [num,setNum] = useState(0);
+
+  useEffect(()=>{
+    alert(`button clicked ${num}`);
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={()=>{
+        setNum (num +1);
+      }}>Click number {num}
+      </button>
     </div>
-  );
+  )
 }
 
 export default App;
+

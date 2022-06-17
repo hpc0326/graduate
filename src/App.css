@@ -28,6 +28,30 @@
   color: #61dafb;
 }
 
+#map-Css{
+  position: absolute;
+  z-index: 2;
+}
+
+#placeHolder {
+  display: block;
+  margin :auto;
+  
+  width: 50px;
+  height :55px;
+  
+}
+
+#divWithPic{
+ 
+ width:auto;
+ height:100vh;
+background-image: url(./img/xinhai_map.png);
+ background-position: center center;
+ background-size: contain;
+ background-repeat: no-repeat;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
