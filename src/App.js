@@ -1,26 +1,17 @@
 //import logo from './logo.svg';
 import './App.css';
 import React ,{useState , useEffect} from 'react';
-//import { Button } from 'react-bootstrap';
-import Table from './Table'
 
 
+import LinkPage from './Interface'
+import Map from './Return_Map'
 
 
 const App = () => {
 
-  const [num,setNum] = useState(0);
-
-  useEffect(()=>{
-    alert(`button clicked ${num}`);
-  });
-
   return (
     <div>
-      <button onClick={()=>{
-        setNum (num +1);
-      }}>Click number {num}
-      </button>
+      <Map/>
     </div>
   )
 }

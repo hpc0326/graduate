@@ -46,7 +46,6 @@
  
  width:auto;
  height:100vh;
-background-image: url(./img/xinhai_map.png);
  background-position: center center;
  background-size: contain;
  background-repeat: no-repeat;
@@ -60,3 +59,9 @@ background-image: url(./img/xinhai_map.png);
     transform: rotate(360deg);
   }
 }
+
+.bg-nav{
+  background-color: rgb(120, 189, 250);
+}
+
+body { padding-top: 50px }
