@@ -55,9 +55,9 @@ export default function Map(){
     
 
   const site={
-    LatLngUrl : 'http://127.0.0.1:8000/?start='+restaurant.number+'&end=['+place.lat+','+place.lng+']',
-    NameUrl : 'http://127.0.0.1:8000/?start='+restaurant.number+'&end='+place.name,
-    LLDUrl : 'http://127.0.0.1:8000/?start='+restaurant.number+'&end=['+place.lat+','+place.lng+']'+'&deliver=['+deliver.lat+','+deliver.lng+']'
+    LatLngUrl : 'http://140.118.122.148:30308/?start='+restaurant.number+'&end=['+place.lat+','+place.lng+']',
+    NameUrl : 'http://140.118.122.148:30308/?start='+restaurant.number+'&end='+place.name,
+    LLDUrl : 'http://140.118.122.148:30308?start='+restaurant.number+'&end=['+place.lat+','+place.lng+']'+'&deliver=['+deliver.lat+','+deliver.lng+']'
   }
 
   const map = {
@@ -70,7 +70,11 @@ export default function Map(){
     setPlace({name : building})
   }
 
-
+  const setNull = () => {
+    setDeliver({lat:null, lng:null})
+    setPlace({lat:null, lng:null, name:null})
+    setRestaurant({number:null})
+  }
   
   if (restaurant.number == null || place.lat ==null || place.lng == null){
     return (
@@ -89,9 +93,10 @@ export default function Map(){
           <button onClick={()=> setPlace({lat:25.011976749737887, lng:121.54151956449694})}>EE</button>
           <button onClick={()=> setPlace({lat:25.013281305547366, lng:121.5403459659688})}>IB</button>
           <button onClick={()=> setPlace({lat:25.015153349835774, lng:121.54268069839854})}>TR</button>
+          <button onClick={() => getLocation()}>getLocation</button>
         </div>
       <h5>type in the building abbreviation</h5><br/>
-      <button onClick={getValue}>new dest</button> <br/>
+      <button onClick={() => getValue()}>new dest</button> <br/>
       <input id="building" placeholder="building"></input>
 
     </div>);
@@ -101,10 +106,10 @@ export default function Map(){
       return(
       <div >
         <h3>success1</h3>
-        
         <h5>Deliver position</h5>
         <button onClick={() => setDeliver({lat:25.013577283783587, lng:121.54115405232888})}>LB</button>
         <button onClick={() => setDeliver({lat:25.012860193815552, lng:121.54151673012862})}>Dorm2</button>
+        <button onClick={() => getLocation()}>getLocation</button>
         <img src={site.LLDUrl} alt= '1' width={map.width}/>
       </div> ) 
     }
@@ -112,7 +117,7 @@ export default function Map(){
       return(
         <div className ={map} >
           <h3>success2</h3>
-          <button onClick={() => alert('hello')}>Delete</button>
+          <button onClick={() => setNull()}>Delete</button>
           <img src={site.LLDUrl} alt= '2' width={map.width}/>
         </div> ) 
     }

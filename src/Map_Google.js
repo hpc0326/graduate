@@ -76,13 +76,13 @@ function App(){
         <h3>起點</h3>
         <button onClick={()=> setRestaurant({lat:25.01387286692449,lng: 121.54281288590185 })}>第一學餐</button>
         <button onClick={()=> setRestaurant({lat:25.0119935 ,lng:121.5409525})}>第三學餐</button>
-        <button onClick={getLocation}>現在位置</button>
+        <button onClick={()=> getLocation()}>現在位置</button>
       </div>
       <div>
         <h3>終點</h3>
         <button onClick={()=> setRestaurant({lat:25.01387286692449,lng: 121.54281288590185 })}>第一學餐</button>
         <button onClick={()=> setRestaurant({lat:25.0119935 ,lng:121.5409525})}>第三學餐</button>
-        <button onClick={getLocation}>現在位置</button>
+        <button onClick={()=> getLocation()}>現在位置</button>
       </div>
       <GoogleMap 
         zoom={19} 

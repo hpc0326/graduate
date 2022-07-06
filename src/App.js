@@ -5,6 +5,7 @@ import React ,{useState , useEffect} from 'react';
 
 import LinkPage from './Interface'
 import Map from './Return_Map'
+//import Map from './Map_Google'
 
 
 const App = () => {
